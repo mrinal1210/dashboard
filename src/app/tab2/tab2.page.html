@@ -1,0 +1,68 @@
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="form">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input formControlName="username" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('username').invalid && form.get('username').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Username cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('email').invalid && form.get('email').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Email cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('password').invalid && form.get('password').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Password cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Confirm password</ion-label>
+            <ion-input formControlName="confirmPassword" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('confirmPassword').invalid && form.get('confirmPassword').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Confirm password cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-text-center">
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button expand="round" fill="outline" (click)="onRegister()" [disabled]="form.invalid">Register</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

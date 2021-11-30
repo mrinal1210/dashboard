@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Register user</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="form">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('name').invalid && form.get('name').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Name cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('email').invalid && form.get('email').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Email cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Phone number</ion-label>
+            <ion-input formControlName="phoneNumber" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('phoneNumber').invalid && form.get('phoneNumber').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>Phone number cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">City</ion-label>
+            <ion-input formControlName="city" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="form.get('city').invalid && form.get('city').touched">
+        <ion-col size-sm="6" offset-sm="3">
+          <small>City cannot be blank.</small>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-text-center">
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button expand="round" fill="outline" (click)="onSubmit()" [disabled]="form.invalid">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
